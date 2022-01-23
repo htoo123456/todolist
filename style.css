@@ -161,10 +161,10 @@ input[type = text] {
     left: 0;
 }
 .light {
-    background-image: url("images/bg-desktop-light.jpg");
+    background-image: url("bg-desktop-light.jpg");
 }
 .dark {
-    background-image: url("images/bg-desktop-dark.jpg");
+    background-image: url("bg-desktop-dark.jpg");
     transform: scaleX(0);
     transform-origin: left;
     transition: transform .5s ease-in-out;
