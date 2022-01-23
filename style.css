@@ -127,7 +127,7 @@ input[type = text] {
     outline: 0;
     border: 0;
     width: 80%;
-
+    background-color: #f7f7f7;
 }
 
 .toDoInput::placeholder {
