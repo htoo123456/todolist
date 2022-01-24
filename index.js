@@ -11,8 +11,15 @@ const toDoUl = document.querySelector(".toDoUl");
 const nav = document.querySelector(".nav");
 const flex = document.querySelector(".flex");
 const check = document.querySelectorAll(".status");
+const all = document.querySelectorAll(".all");
 let toDoList = [];
 let state = 'all';
+
+window.addEventListener("load", () => {
+  if(localStorage.getItem("todolist")) {
+    toDoList = localStorage.getItem("todolist");
+  }
+})
 
 const checking = (checkbox) => {
   toDoList.map((toDo) =>
@@ -29,7 +36,6 @@ const deletingTodo = (id) => {
     let restToDo = toDoList.filter((todo) => todo.id == id);
     let checkingDeleting = toDoList.filter((todo) => todo.list != restToDo[0].list && todo.id != id);
     toDoList = checkingDeleting;
-    console.log(completedDeletedTodo)
     return;
   }
   toDoList = deletedTodo;
@@ -48,12 +54,16 @@ input.addEventListener("keypress", (e) => {
   if (e.key == "Enter" && input.value.trim() != "") {
     const checkingToDo = toDoList.filter((toDo) => toDo.list === input.value);
     if (checkingToDo.length == 1) return;
+    if(state == 'completed') {
+      const blueText = document.querySelector(".blueText");
+      blueText.classList.remove("blueText");
+      all.classList.add("blueText");
+    }
     const toDoListObj = {
       id: new Date().getTime(),
       list: input.value,
       ischecked: false,
     };
-    console.log(toDoListObj);
     toDoList.unshift(toDoListObj);
     renderingToDo(toDoList);
     input.value = "";
@@ -88,15 +98,18 @@ const renderingToDo = (toDoArr) => {
       })" ${toDoObj.ischecked && "checked"}>
       <span class = "checkmark"></span>
     </div>
+    <div class = "scroll">
     <span class = "todo ${toDoObj.ischecked ? "line-through" : ""}">${
       toDoObj.list
-    }</span>
+    }</span></div>
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class = "cross" onclick = "deletingTodo(${
       toDoObj.id
     })"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
   </div>`;
     toDoListTag.innerHTML += toDoTag;
   });
+  const stringifiedArr = JSON.stringify(toDoList)
+  localStorage.setItem("todolist", stringifiedArr);
   if (toDoArr.length <= 1) {
     countList.textContent = `${toDoArr.length} item left`;
   } else if (toDoArr.length >= "1000") {
@@ -106,25 +119,7 @@ const renderingToDo = (toDoArr) => {
   }
 };
 
-// buttons.addEventListener("click", (e) => {
-//   if (e.target.classList.contains("lightButton")) {
-//     color("body").style.backgroundColor = "hsl(235, 21%, 11%)";
-//     color("toDoCard").style.backgroundColor = "hsl(237, 14%, 26%)";
-//     color("input").style.backgroundColor = "hsl(237, 14%, 26%)";
-//     color("toDoUl").style.backgroundColor = "hsl(237, 14%, 26%)";
-//     color("nav").style.backgroundColor = "hsl(237, 14%, 26%)";
-//     //flex.style.borderColor  = "white";
-//     // flex.style.backgroundColor = "hsl(237, 14%, 26%)";
-//   } else {
-    
-//     color("body").style.backgroundColor = "hsl(236, 33%, 92%)";
-//     color("toDoCard").style.backgroundColor = "hsl(236, 33%, 92%)";
-//     color("input").style.backgroundColor = "hsl(236, 33%, 92%)";
-//     color("nav").style.backgroundColor = "hsl(236, 33%, 92%)";
-//     // active.style.backgroundColor = "hsl(236, 33%, 92%)";
-//     //flex.style.borderColor  = "white";
-//   }
-// });
+renderingToDo(toDoList);
 
 lightButton.addEventListener("click", () => {
   animation(darkButton, lightButton);
