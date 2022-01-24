@@ -11,13 +11,13 @@ const toDoUl = document.querySelector(".toDoUl");
 const nav = document.querySelector(".nav");
 const flex = document.querySelector(".flex");
 const check = document.querySelectorAll(".status");
-const all = document.querySelectorAll(".all");
+const all = document.querySelector(".all");
 let toDoList = [];
 let state = 'all';
 
-window.addEventListener("load", () => {
+window.addEventListener("loaded", () => {
   if(localStorage.getItem("todolist")) {
-    let parsedArr = JSON.parse(localStorge.getItem("todolist"))
+    let parsedArr = JSON.parse(localStorage.getItem("todolist"));
     toDoList = parsedArr;
   }
 })
