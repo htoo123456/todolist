@@ -17,7 +17,8 @@ let state = 'all';
 
 window.addEventListener("load", () => {
   if(localStorage.getItem("todolist")) {
-    toDoList = localStorage.getItem("todolist");
+    let parsedArr = JSON.parse(localStorge.getItem("todolist"))
+    toDoList = parsedArr;
   }
 })
 
