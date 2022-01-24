@@ -16,8 +16,9 @@ let toDoList = [];
 let state = 'all';
 
 window.addEventListener("loaded", () => {
-  if(localStorage.getItem("todolist")) {
-    let parsedArr = JSON.parse(localStorage.getItem("todolist"));
+  const getFromLS = localStorage.getItem("todolist")
+  if(getFromLS) {
+    const parsedArr = JSON.parse(getFromLS);
     toDoList = parsedArr;
   }
 })
@@ -67,6 +68,7 @@ input.addEventListener("keypress", (e) => {
     };
     toDoList.unshift(toDoListObj);
     renderingToDo(toDoList);
+    
     input.value = "";
   }
 });
@@ -118,6 +120,7 @@ const renderingToDo = (toDoArr) => {
   } else {
     countList.textContent = `${toDoArr.length} items left`;
   }
+  
 };
 
 renderingToDo(toDoList);
