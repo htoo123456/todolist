@@ -1,283 +1,318 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-    background-color: #f7f7f7;
-    font-size: 1.5rem;
-    transition: background-color .2s ease-in;
+  background-color: #f7f7f7;
+  font-size: 1.5rem;
+  transition: background-color 0.2s ease-in;
 }
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 ::-webkit-scrollbar {
-    width: .4rem;
+  width: 0.1rem;
 }
-
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .toDoCard {
-    width: 30rem;
-    border-radius: .5rem;
-    position: absolute;
-    top: 5rem;
+  width: 30rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 5rem;
 }
 .inputToDo {
-    width: 100%;
-    background-color: #f7f7f7;
-    height: 4rem;
-    border-radius: .2rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 2rem;
-    border-radius: .5rem;
-    box-shadow: 0 0 5rem rgba(0, 0, 0, .7);
+  width: 100%;
+  background-color: #f7f7f7;
+  height: 4rem;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5rem rgba(0, 0, 0, 0.7);
 }
-.line-through{
-    text-decoration: line-through;
+.line-through {
+  text-decoration: line-through;
 }
 .checkbox {
-    position: relative;
-    cursor: pointer;
+  position: relative;
+  cursor: pointer;
 }
 .checkbox input {
-    position: absolute;
-    opacity: 0;
-    z-index: 1;
-    top: -.3rem;
-    left: 0;
-    cursor: pointer;
-    overflow: visible;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  top: -0.3rem;
+  left: 0;
+  cursor: pointer;
+  overflow: visible;
 }
 
 .checkmark {
-    position: absolute;
-    top: -.8rem;
-    left: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    border: 1px solid #777;
-    border-radius: 50%;
+  position: absolute;
+  top: -0.8rem;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #777;
+  border-radius: 50%;
 }
 
 .checkbox input:checked ~ .checkmark {
-    background-image: linear-gradient(hsl(192, 100%, 67%) ,hsl(280, 87% ,65%));
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .checkbox input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .checkbox .checkmark:after {
-    left: 2.8px;
-    top: -.5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+  left: 2.8px;
+  top: -0.5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 .toDoList {
-      position: relative;
-      color: black;
-      
-      border-radius: .5rem;
-      
-  }
+  position: relative;
+  color: black;
+
+  border-radius: 0.5rem;
+}
 .toDoUl {
-    
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    height: 25rem;
-    background-color: #f7f7f7;
-    border-radius: .5rem;
-    box-shadow: 0 0 4rem rgba(0, 0, 0, .3);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 25rem;
+  background-color: #f7f7f7;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.3);
 }
 
 .list {
-    width: 100%;
-    overflow-x: scroll;
-    padding-bottom: 1rem;
+  width: 100%;
+  overflow-x: scroll;
+  padding-bottom: 1rem;
 }
 
 .list:first-child {
-    border-top-right-radius: .5rem;
-    border-top-left-radius: .5rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
 }
-input[type = text] {
-    outline: 0;
-    border: 0;
-    width: 80%;
-    background-color: #f7f7f7;
+input[type="text"] {
+  outline: 0;
+  border: 0;
+  width: 80%;
+  background-color: #f7f7f7;
+  height: 3rem;
 }
 
 .toDoInput::placeholder {
-    color: #f7f7f7;
-    opacity: .5;
+  color: #f7f7f7;
+  opacity: 0.5;
 }
 
 .flex {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 4.3rem;
-    border-bottom: 1px solid rgba(136, 136, 136, 0.63);
-}
-.flex > .todo {
-    width: 65%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 4.3rem;
+  border-bottom: 1px solid rgba(136, 136, 136, 0.63);
 }
 
+.scroll {
+  width: 75%;
+  margin-left: 1rem;
+  transform: translateY(0.7rem);
+  overflow-x: scroll;
+}
 
 .backgroundParent {
-    width: 100%;
-    height: 20rem;
-    margin: 0 auto;
-    position: relative;
+  width: 100%;
+  height: 20rem;
+  margin: 0 auto;
+  position: relative;
 }
 .backgroundParent > div {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .light {
-    background-image: url("bg-desktop-light.jpg");
+  background-image: url("images/bg-desktop-light.jpg");
 }
 .dark {
-    background-image: url("bg-desktop-dark.jpg");
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .5s ease-in-out;
+  background-image: url("images/bg-desktop-dark.jpg");
+  transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  transform-origin: left;
+  -webkit-transform-origin: left;
+  transition: transform 0.5s ease-in-out;
 }
 .background::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url("images/bg-desktop-dark.jpg");
-    width: 100%;
-    height: 20rem;
-    z-index: -1;
-    transform: scaleX(0);
-    
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("images/bg-desktop-dark.jpg");
+  width: 100%;
+  height: 20rem;
+  z-index: -1;
+  transform: scaleX(0);
+  -webkit-transform: scaleX(0);
 }
 .heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .heading > h1 {
-    text-transform: uppercase;
-    letter-spacing: 1.5rem;
-    color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.5rem;
+  color: white;
 }
 .buttons {
-    position: relative;
-    margin-right: 35px;
-    margin-bottom: 25px;
+  position: relative;
+  margin-right: 35px;
+  margin-bottom: 25px;
 }
 .buttons > svg {
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    left: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .lightButton {
-    z-index: 1;
+  z-index: 1;
 }
 
 .darkButton {
-    opacity: 0;
-    z-index: -1;
+  opacity: 0;
+  z-index: -1;
 }
 
 .nav {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f7f7f7;
-    font-size: 1.2rem;
-    padding: 1rem 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f7f7f7;
+  font-size: 1.2rem;
+  padding: 1rem 0;
 }
 
-
-.status{
-    cursor: pointer;
-    padding: .7rem;
-    border-radius: 5px;
-    font-weight: bold;
+.status {
+  cursor: pointer;
+  padding: 0.7rem;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .blueText {
-    color: hsl(220, 98%, 61%);
+  color: hsl(220, 98%, 61%);
 }
-
-.slideout {
-    animation-name: slideout;
+.moveInTop {
+    animation-name: moveInTop;
     animation-duration: 2s;
     transition: all;
+}
+.slideout {
+  animation-name: slideout;
+  animation-duration: 2s;
+  transition: all;
 }
 .slidein {
-    animation-name: slidein;
-    animation-duration: 2s;
-    transition: all;
+  animation-name: slidein;
+  animation-duration: 2s;
+  transition: all;
 }
 @keyframes slideout {
-    0% {
-        opacity: 1;
-        transform: translate(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(20px, 20px);
-    }
+  0% {
+    opacity: 1;
+    transform: translate(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(20px, 20px);
+  }
 }
 @keyframes slidein {
-    0% {
-        opacity: 0;
-        transform: translate(-20px, -20px);
-    }
-    80% {
-        opacity: .8;
-        transform: translate(5px, 5px);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translate(-20px, -20px);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translate(5px, 5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 @keyframes moveInRight {
-    0% {
-      opacity: 0;
-      transform: translateX(100px); }
-    80% {
-      transform: translateX(-15px); }
-    100% {
-      opacity: 1;
-      transform: translate(0); } }
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(100px);
+  }
+}
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media screen and (max-width: 465px) {
+  html {
+    font-size: 70%;
+  }
+  .light {
+    background: url("bg-mobile-light.jpg");
+  }
+  .dark {
+    background: url("bg-mobile-dark.jpg");
+  }
+}
