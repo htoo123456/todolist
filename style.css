@@ -164,10 +164,10 @@ input[type="text"] {
   background-size: cover;
 }
 .light {
-  background-image: url("images/bg-desktop-light.jpg");
+  background-image: url("bg-desktop-light.jpg");
 }
 .dark {
-  background-image: url("images/bg-desktop-dark.jpg");
+  background-image: url("bg-desktop-dark.jpg");
   transform: scaleX(0);
   -webkit-transform: scaleX(0);
   transform-origin: left;
@@ -179,7 +179,7 @@ input[type="text"] {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("images/bg-desktop-dark.jpg");
+  background-image: url("bg-desktop-dark.jpg");
   width: 100%;
   height: 20rem;
   z-index: -1;
