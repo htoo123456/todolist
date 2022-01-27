@@ -245,11 +245,15 @@ input[type="text"] {
   padding: 0.7rem;
   border-radius: 5px;
   font-weight: bold;
+  color: rgb(117, 116, 116);
 }
-
+.status:hover {
+  filter: brightness(50%);
+}
 .blueText {
   color: hsl(220, 98%, 61%);
 }
+
 .moveInTop {
     animation-name: moveInTop;
     animation-duration: 2s;
@@ -330,11 +334,13 @@ input[type="text"] {
     height: 4rem;
   }
   .toDoUl {
-    height: 30rem;
+    height: 40rem;
   }
   .flex {
     font-size: 2rem;
-    height: 5rem;
+  }
+  .nav {
+    font-size: 1.5rem;
   }
   .light {
     background: url("bg-mobile-light.jpg");
