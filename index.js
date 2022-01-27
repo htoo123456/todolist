@@ -111,8 +111,6 @@ const renderingToDo = (toDoArr) => {
   </div>`;
     toDoListTag.innerHTML += toDoTag;
   });
-  const stringifiedArr = JSON.stringify(toDoList)
-  localStorage.setItem("todolist", stringifiedArr);
   if (toDoArr.length <= 1) {
     countList.textContent = `${toDoArr.length} item left`;
   } else if (toDoArr.length >= "1000") {
@@ -120,7 +118,11 @@ const renderingToDo = (toDoArr) => {
   } else {
     countList.textContent = `${toDoArr.length} items left`;
   }
-  
+  if (window.closed) {
+    return;
+  }
+  const stringifiedArr = JSON.stringify(toDoList)
+  localStorage.setItem("todolist", stringifiedArr);
 };
 
 renderingToDo(toDoList);
