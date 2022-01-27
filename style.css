@@ -13,7 +13,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 0.1rem;
+  width: 1px;
 }
 
 .container {
@@ -113,19 +113,26 @@ html {
 .list {
   width: 100%;
   overflow-x: scroll;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .list:first-child {
   border-top-right-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
 }
+
+.list:last-child {
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
 input[type="text"] {
   outline: 0;
   border: 0;
   width: 80%;
-  background-color: #f7f7f7;
   height: 3rem;
+  font-size: 1.5rem;
+  background-color: #f7f7f7;
 }
 
 .toDoInput::placeholder {
@@ -144,7 +151,7 @@ input[type="text"] {
 .scroll {
   width: 75%;
   margin-left: 1rem;
-  transform: translateY(0.7rem);
+  margin-top: 2rem;
   overflow-x: scroll;
 }
 
@@ -229,6 +236,8 @@ input[type="text"] {
   background-color: #f7f7f7;
   font-size: 1.2rem;
   padding: 1rem 0;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }
 
 .status {
@@ -308,6 +317,24 @@ input[type="text"] {
 @media screen and (max-width: 465px) {
   html {
     font-size: 70%;
+  }
+  .toDoCard {
+    width: 33rem;
+    top: 7rem;
+  }
+  .inputToDo {
+    height: 5rem;
+  }
+  input[type = text] {
+    font-size: 1.7rem;
+    height: 4rem;
+  }
+  .toDoUl {
+    height: 30rem;
+  }
+  .flex {
+    font-size: 2rem;
+    height: 5rem;
   }
   .light {
     background: url("bg-mobile-light.jpg");
