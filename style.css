@@ -147,11 +147,14 @@ input[type="text"] {
   height: 4.3rem;
   border-bottom: 1px solid rgba(136, 136, 136, 0.63);
 }
-
+.flexbox {
+  display: flex;
+  align-items: center;
+}
 .scroll {
   width: 75%;
   margin-left: 1rem;
-  margin-top: 15px;
+  margin-top: 20px;
   overflow-x: scroll;
 }
 
@@ -334,10 +337,13 @@ input[type="text"] {
     height: 4rem;
   }
   .toDoUl {
-    height: 40rem;
+    height: 35rem;
   }
   .flex {
     font-size: 2rem;
+  }
+  .scroll {
+    margin-top: 15px;
   }
   .nav {
     font-size: 1.5rem;
