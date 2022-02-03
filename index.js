@@ -15,13 +15,13 @@ const all = document.querySelector(".all");
 let toDoList = [];
 let state = 'all';
 
-window.addEventListener("loaded", () => {
-  const getFromLS = localStorage.getItem("todolist")
-  if(getFromLS) {
-    const parsedArr = JSON.parse(getFromLS);
-    toDoList = parsedArr;
-  }
-})
+const getFromLS = localStorage.getItem("todolist")
+if(getFromLS) {
+  const parsedArr = JSON.parse(getFromLS);
+  console.log(parsedArr);
+  toDoList = parsedArr;
+}
+
 
 const checking = (checkbox) => {
   toDoList.map((toDo) =>
