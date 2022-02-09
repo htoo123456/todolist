@@ -151,7 +151,7 @@ input[type="text"] {
 .scroll {
   width: 75%;
   margin-left: 10px;
-  margin-top: 20px;
+  margin-top: 15px;
   overflow-x: scroll;
 }
 
@@ -340,7 +340,7 @@ input[type="text"] {
     font-size: 20px;
   }
   .scroll {
-    margin-top: 15px;
+    margin-top: 10px;
   }
   .nav {
     font-size: 15px;
